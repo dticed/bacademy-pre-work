@@ -16,4 +16,4 @@ Repositório de resolução de desafios do pre-work da brain academy
 # Dia 4 ❌
 [Pasta dia 4](https://github.com/dticed/bacademy-pre-work/)
 # Dia 5 ❌
-[Pasta dia 5](https://github.com/dticed/bacademy-pre-work/)
+//[Pasta dia 5](https://github.com/dticed/bacademy-pre-work/)
