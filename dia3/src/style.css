@@ -1,3 +1,5 @@
+body {}
+
 .app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -5,4 +7,52 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #dddddd;
+  border-radius: 0.5em;
+}
+
+section {
+  padding: 15px;
+  display: float;
+  justify-content: center;
+  align-items: center;
+}
+
+input, label {
+  padding: 10px;
+  width: 90%;
+}
+
+button {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+table {
+  margin-top: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 0.5em;
+}
+
+td, th {
+  width: 100px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  border-radius: 0.5em;
+}
+
+img {
+  float: left;
+  width:  100px;
+  height: 100px;
+  object-fit: cover;
 }
