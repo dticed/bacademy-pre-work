@@ -4,7 +4,7 @@ const url = 'http://localhost:3333/cars'
 
 const app = document.querySelector('[data-js="app"]')
 const form = document.querySelector('[data-js="form-carro"]')
-const table = document.querySelector('[data-js="table-car"]')
+const tbody = document.querySelector('tbody')
 
 
 form.addEventListener('submit', (e) => {
@@ -26,7 +26,7 @@ form.addEventListener('submit', (e) => {
   } = {
     ...dadosParaApi
   };
-
+  console.log(dadosParaApi)
   cadastrarCarro(image, brandModel, year, plate, color);
   e.target.reset()
   imagem.focus()
@@ -49,30 +49,9 @@ async function cadastrarCarro(imagem, brandModel, year, plate, color) {
   if (!result.ok) {
     console.log("Não foi possível cadastrar o carro.")
   }
+  getCars()
+
 }
-
-// async function getDados() {
-//   await fetch(url)
-//     .then(response => {
-//       return response.json();
-//     })
-//     .then(r => {
-//       dados = r;
-//       console.log("Exemplo no bloco do getDados", dados)
-//     })
-//     .then(err => {
-//       // fazer algo com o erro aqui
-//     })
-// }
-
-// async function verificaDados() {
-//   await getDados()
-//   if (dados.length === 0) {
-//     const span = document.createElement('span');
-//     span.textContent = "Nenhum carro cadastrado"
-//     app.appendChild(span)
-//   }
-// }
 
 async function getCars() {
   const result = await fetch(url)
@@ -81,28 +60,44 @@ async function getCars() {
   renderCars(result)
 }
 
-function renderCars(carros) {
-  carros.forEach(carro => {
-    const tr = document.createElement('tr')
-    for (let key in carro) {
-      console.log(key)
-      const th = document.createElement('th')
-      if (key === "image") {
-        const img = document.createElement('img')
-        img.src = carro[key]
-        th.appendChild(img);
-        tr.appendChild(th)
-      } else {
-        th.innerHTML = carro[key];
-        tr.appendChild(th)
-      }
+function renderCars(cars) {
+  tbody.innerHTML = ""
+  if (cars.length === 0) {
+    const span = document.createElement('span')
+    span.textContent = "Nenhum carro cadastrado."
+    app.appendChild(span)
+  } else {
+    const span2 = document.querySelector('span')
+    if (span2) {
+      span2.innerHTML = ""
     }
-    table.appendChild(tr)
-  })
+    console.log(cars)
+    cars.forEach(car => {
+      const deleteButton = document.createElement('button');
+      deleteButton.classList.add('delete-button')
+      deleteButton.textContent = "Delete"
+      //deleteButton.addEventListener('click', deleteCar());
+      const tr = document.createElement('tr')
+      for (let key in car) {
+        const th = document.createElement('th')
+        if (key === "image") {
+          const img = document.createElement('img')
+          img.src = car[key]
+          th.appendChild(img);
+          tr.appendChild(th)
+        } else {
+          th.innerHTML = car[key];
+          tr.appendChild(th)
+        }
+      }
+      tr.appendChild(deleteButton)
+      tbody.appendChild(tr)
+    })
+  }
 }
 
 function deleteCar() {
-
+  console.log('teste')
 }
 
 function loadApp() {

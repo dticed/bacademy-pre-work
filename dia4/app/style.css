@@ -49,12 +49,18 @@ td, th {
 }
 
 img {
-  float: left;
-  width:  100px;
-  height: 100px;
-  object-fit: cover;
+  width:  80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 span {
   color: red;
+}
+
+.delete-button {
+margin-top: 40px;
+  background: rgb(146, 49, 49);
+  color: white;
+  border-radius: 0.5em;
 }
