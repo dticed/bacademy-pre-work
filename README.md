@@ -1,5 +1,5 @@
 # Pre-work da Brain Academy
-Repositório de resolução de desafios do pre-work da brain academy
+Repositório com resoluções dos desafios do pre-work da brain academy
 
 <a href="https://dticed.notion.site/dticed/9384401fdba941d9a579b58d0120ab45?v=e0a7e2946d29497aa87e49ec849ae78f">
   <img src="https://img.icons8.com/nolan/452/notion.png" alt="visual studio code" width="30px">
